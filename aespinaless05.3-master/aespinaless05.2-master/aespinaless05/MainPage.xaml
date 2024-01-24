@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="aespinaless05.MainPage">
+
+    <StackLayout>
+        <Label Text="CONSUMO DE SERVICIO WEB" HorizontalTextAlignment="Center" FontSize="24"></Label>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Text="CODIGO" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="0"></Label>
+            <Label Text="NOMBRE" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="1"></Label>
+            <Label Text="APELLIDO" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="2"></Label>
+            <Label Text="EDAD" TextColor="Red" FontSize="18" Grid.Row="0" Grid.Column="3"></Label>
+        </Grid>
+        <ListView x:Name="listaEstudiantes" ItemSelected="listaEstudiantes_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding codigo}" TextColor="Black" FontSize="18" Grid.Row="0" Grid.Column="0"/>
+                                <Label Text="{Binding nombre}" TextColor="Black" FontSize="18" Grid.Row="0" Grid.Column="1"/>
+                                <Label Text="{Binding apellido}" TextColor="Black" FontSize="18" Grid.Row="0" Grid.Column="2"/>
+                                <Label Text="{Binding edad}" TextColor="Black" FontSize="18" Grid.Row="0" Grid.Column="3"/>
+                            </Grid>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="btnMostrar" Clicked="btnMostrar_Clicked" Text="Mostrar"></Button>
+    </StackLayout>
+
+</ContentPage>
